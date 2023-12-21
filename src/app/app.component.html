@@ -1,0 +1,21 @@
+<div class="container" style="width:650px">
+  <div class="my-3">
+    <h3>Bacancy</h3>
+    <h4>{{ title }}</h4>
+  </div>
+  <label class="btn btn-default">
+    <input type="file" multiple (change)="selectFiles($event)">
+  </label>
+  
+  <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+
+  <div>
+    <img *ngFor="let preview of previews" [src]="preview" class="preview" />
+  </div>
+
+
+  <div>
+    Fetched Images :<br>
+    <img *ngFor="let image of fetchedData" [src]="image" class="preview" />
+  </div>
+</div>
